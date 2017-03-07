@@ -144,5 +144,66 @@ describe("Test distributions", () => {
             //output.should.be.not.greaterThan(1);
         });
     });
-})
-;
+
+    describe("Test nested combined distribution", () => {
+        const input = {
+            type: task1.DISTRIBUTION_TYPE.COMBINED,
+            probability: 1,
+            data: [
+                {
+                    type: task1.DISTRIBUTION_TYPE.EXPONENTIAL,
+                    probability: 0.1,
+                    rate: 0.3
+                },
+                {
+                    type: task1.DISTRIBUTION_TYPE.COMBINED,
+                    probability: 0.9,
+                    data: [
+                        {
+                            type: task1.DISTRIBUTION_TYPE.NORMAL,
+                            bounds: {
+                                left: 0.5,
+                                right: 1.5
+                            },
+                            probability: 0.25,
+                            expected_value: 1,
+                            variance: 0.3
+                        }, {
+                            type: task1.DISTRIBUTION_TYPE.COMBINED,
+                            probability: 0.75,
+                            data: [
+                                {
+                                    type: task1.DISTRIBUTION_TYPE.UNIFORM,
+                                    bounds: {
+                                        left: 2,
+                                        right: 5
+                                    },
+                                    probability: 0.05
+                                }, {
+                                    type: task1.DISTRIBUTION_TYPE.DISCRETE,
+                                    probability: 0.95,
+                                    data: [{
+                                        point: 6,
+                                        probability: 0.4
+                                    }, {
+                                        point: 7,
+                                        probability: 0.5
+                                    }, {
+                                        point: 8,
+                                        probability: 0.1
+                                    }]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        };
+        it("Testing...", () => {
+            const output = task1.get_sample(input);
+            output.println();
+            output.should.be.not.lessThan(0);
+            //output.should.be.not.greaterThan(1);
+        });
+    });
+});
