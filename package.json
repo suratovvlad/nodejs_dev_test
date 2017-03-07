@@ -4,9 +4,9 @@
   "description": "Solutions for the tasks from Node.js vacancy.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha tests/"
   },
-  "author": "Vladislav Suratov suratovvlad@gmail.com",
+  "author": "Vladislav Suratov <suratovvlad@gmail.com> (https://github.com/suratovvlad)",
   "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
