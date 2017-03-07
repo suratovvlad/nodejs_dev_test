@@ -1,0 +1,17 @@
+{
+  "name": "nodejs_dev_test",
+  "version": "1.0.0",
+  "description": "Solutions for the tasks from Node.js vacancy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "author": "Vladislav Suratov suratovvlad@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jStat": "^1.5.3",
+    "mocha": "^3.2.0",
+    "println": "^0.1.1"
+  }
+}
