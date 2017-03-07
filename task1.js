@@ -31,7 +31,7 @@ const discrete_routine = function (distr) {
 
     // Get Random
     const generated_rand = getRandom();
-    generated_rand.println();
+    //generated_rand.println();
 
     // Check what is the distribution by Monte-Carlo Method
     let choosen_point_index = 0;
@@ -88,7 +88,7 @@ const combine_routine = function (distr) {
 
     // Get Random
     const generated_rand = getRandom();
-    generated_rand.println();
+    //generated_rand.println();
 
     // Check what is the distribution by Monte-Carlo Method
     let choosen_distr_index = 0;
